@@ -1,0 +1,21 @@
+services:
+  analysis:
+    build: .
+    image: lumma-static-lab
+    # HARD ISOLATION: the container has no network access at all.
+    network_mode: none
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp
+      - /work
+    volumes:
+      # Samples are UNTRUSTED and mounted read-only. Never rw.
+      - ./samples:/samples:ro
+      # Optional YARA rules (read-only).
+      - ./rules:/rules:ro
+      # Report output (the only writable bind mount).
+      - ./output:/output

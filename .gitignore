@@ -1,0 +1,16 @@
+# NEVER commit malware samples or analysis output to a public repo.
+samples/*
+rules/*
+output/*
+!samples/.gitkeep
+!rules/.gitkeep
+!output/.gitkeep
+
+# Common junk
+*.zip
+*.exe
+*.dll
+*.pcap
+*.pcapng
+.DS_Store
+Thumbs.db
