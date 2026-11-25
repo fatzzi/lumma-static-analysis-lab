@@ -24,6 +24,8 @@ FakeNet-NG and snapshots instead. Windows Sandbox is **not** on Home edition.
 Dockerfile          analysis toolbox (tshark, pefile, capa, yara, radare2, clamav)
 docker-compose.yml  runs it with --network none, read-only, caps dropped
 analyze.sh          the offline analysis pass (entrypoint)
+VM-DETONATION-RUNBOOK.md  live-demo procedure in an isolated VM (NOT Docker)
+seed-canary-creds.ps1     plants trackable fake creds for the live demo
 samples/            <-- you put the UNZIPPED pcap + dropped files here
 rules/              <-- optional: drop Lumma YARA rules here
 output/             <-- reports land here
